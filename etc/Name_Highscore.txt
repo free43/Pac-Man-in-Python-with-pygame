@@ -1,0 +1,5 @@
+Pac-Man 15000
+Blinky 10000
+Funky 5000
+Inky 2500
+Tim 1000
