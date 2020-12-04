@@ -1,6 +1,6 @@
 # Pac-Man-in-Python-with-pygame
 
-![Pac-Man_title_screen](https://github.com/free43/Pac-Man-in-Python-with-pygame/blob/main/images/Pac-Man_title_screen.png?raw=true)
+![Start-Screen](https://github.com/free43/Pac-Man-in-Python-with-pygame/blob/main/screenshots/Start-Screen.png?raw=true)
 
 
 
