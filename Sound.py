@@ -18,7 +18,9 @@ class Sound(object):
     EXTRAPAC_ID = 5
     INTERMISSION_ID = 6
     RETREATING_ID = 7
-
+    
+    next_siren_music = False #< Check if the next siren sound should be played
+    
     def __init__(self):
         """
             All the Sounds will be loaded into a specific Channel that has a number from 0 to 8
@@ -97,20 +99,33 @@ class Sound(object):
 
             :param counter: The Number of Dots already eaten by Pacman
         """
+        
+        play = False #< Play for new music
+        # Load the different music depending on how much dots are left on the maze        
+        if 0 <= counter < 49 and not self.next_siren_music:
+            play = not play
+            self.next_siren_music = True
+            pg.mixer.music.load(".\sounds\siren_1.wav")
+        elif 49 <= counter < 98 and self.next_siren_music:
+            play = not play
+            self.next_siren_music = False
+            pg.mixer.music.load(".\sounds\siren_2.wav")
+        elif 98 <= counter < 137 and not self.next_siren_music:
+            play = not play
+            self.next_siren_music = True
+            pg.mixer.music.load(".\sounds\siren_3.wav")
+        elif 137 <= counter < 186 and self.next_siren_music:
+            play = not play
+            self.next_siren_music = False
+            pg.mixer.music.load(".\sounds\siren_4.wav")
+        elif 186 <= counter < 245 and not self.next_siren_music:
+            play = not play
+            self.next_siren_music = True
+            pg.mixer.music.load(".\sounds\siren_5.wav")
 
-        # When counter % 50 is zero the siren sound will be changed
-        if not (counter % 50):
+
+        if play:
             pg.mixer.music.stop()
-            if 0 <= counter < 49:
-                pg.mixer.music.load(".\sounds\siren_1.wav")
-            elif 49 <= counter < 98:
-                pg.mixer.music.load(".\sounds\siren_2.wav")
-            elif 98 <= counter < 137:
-                pg.mixer.music.load(".\sounds\siren_3.wav")
-            elif 137 <= counter < 186:
-                pg.mixer.music.load(".\sounds\siren_4.wav")
-            elif 186 <= counter < 245:
-                pg.mixer.music.load(".\sounds\siren_5.wav")
             pg.mixer.music.play(loops = -1)
 
     def stop_siren(self):
