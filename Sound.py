@@ -77,7 +77,8 @@ class Sound(object):
         self.channel_beginning.stop()
 
     def play_chomp(self):
-        self.channel_chomp.play(self.chomp_sound)
+        if not self.channel_chomp.get_busy():
+            self.channel_chomp.play(self.chomp_sound)
 
     def play_death(self):
         self.channel_death.play(self.death_sound)
