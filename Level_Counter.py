@@ -147,10 +147,9 @@ class Level_Counter(object):
         level = self.level
         if self.level >= 2 and self.level < 5:
             level = 2
-        elif self.level >= 5 and self.level < 21:
+        elif self.level >= 5:
             level = 5
-        elif self.level >= 21:
-            level = 21   
+        
 
         # Check if the frame counter has reached the specific time from the dictionary, and change the modi when this is the case
         if self.frame_counter_states == int(self.FPS * self.modi_chase_scatter[level][self.cs_counter]):
