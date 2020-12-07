@@ -387,7 +387,8 @@ class Pacman(Sound.Sound):
 
             # When current level > 20 ghosts can't be eaten anymore
             if current_level >= 21 and self.eat_ghost:
-                ghost.cm_flag = True
+                for ghost_2 in ghosts:
+                    ghost_2.cm_flag = True
                 self.eat_ghost = False
 
             # When an energizer got eaten by Pac-Man while the ghosts still wear in frightened, make them vulnerbale for the same time again
