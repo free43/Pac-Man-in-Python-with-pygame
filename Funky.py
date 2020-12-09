@@ -35,7 +35,6 @@ class Funky(Ghost.Ghost):
         Ghost.Ghost.__init__(self, start_pos, Colors.colors['GREEN'], grid_size)
         self.orginal_color = Colors.colors['GREEN']
         self.state = 'o'
-        self.old_state = 's'
         self.direction = 'u'
         self.target = self.ENERGIZER_UL[0] * self.grid_size, self.ENERGIZER_UL[1] * self.grid_size #< Set his target to the Upper Left Energizer
         self.target_reached = True
