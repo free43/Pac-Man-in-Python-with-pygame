@@ -18,7 +18,6 @@ class Inky(Ghost.Ghost):
         Ghost.Ghost.__init__(self, start_pos, Colors.colors['CYAN'], grid_size)
         self.orginal_color = Colors.colors['CYAN']
         self.state = 'h'
-        self.old_state = 's'
         self.direction = 'u'
 
     def set_target(self, pacman_pos:tuple, pacman_direction:str, blinky_pos:tuple):
