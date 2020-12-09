@@ -24,7 +24,6 @@ class Tim(Ghost.Ghost):
 
         # Movement relevant vars:
         self.state = 'h'
-        self.old_state = 'o'
         self.direction = 'u'
         
     def update(self, pacman_pos:tuple, recent_mode:str, game_field, windowsize_x:int):
